@@ -45,12 +45,12 @@ async def task_watch():
                 post = {}
                 ads_detail = ads['content']
 
-                title = ads_detail.get('title')
+                title = ads_detail.get('title', '-')
                 price = ads_detail['price']
-                engine = ads_detail.get('engine')
+                engine = ads_detail.get('engine', '-')
                 km = ads_detail.get('km')
-                gearbox = ads_detail.get('gearbox')
-                description = ads_detail.get('storytelling')
+                gearbox = ads_detail.get('gearbox', '-')
+                description = ads_detail.get('storytelling', '-')
                 photos = []
                 for photo in ads_detail['images']:
                     photos.append(photo['medium'])
