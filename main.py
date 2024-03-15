@@ -38,7 +38,7 @@ async def task_watch():
         response = requests.get(PARS_URL, headers=HEADERS)
         search_objects = response.json()['search_objects']
 
-        for ads in search_objects:
+        for ads in reversed(search_objects):
             ads_url = BASE_PAGE+ads["content"]['web_slug']
             create = models.Ads.create(ads_id=ads['id'], ads_url=ads_url)
             if create:
